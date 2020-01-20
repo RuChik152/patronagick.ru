@@ -8,6 +8,7 @@ $arr_page = [
 ];
 
 
+
 ?>
 <!DOCTYPE html>
 <html lang="ru"></html>
@@ -25,14 +26,14 @@ $arr_page = [
     <div class="main__menu"><a href="index.html">          <img src="./images/logo.svg" alt="logo"/></a><img class="mobile_banner" src="./images/banner.png" alt="baner"/>
       <ul class="main__menu__item clearfix down_menu--horz">
         <?php         
-          if (isset($arr_page)) 
+          if (isset($arr)) 
           {
-            for ($i=0; $i < count($arr_page); ++$i) {
-                echo "<li><a class=\"mobile_font_size\" href=\"index.php?id=$i\">{$arr_page[$i][0]}</a>";
-                    if (count($arr_page[$i]) > 1) {
+            for ($i=0; $i < count($arr); ++$i) {
+                echo "<li><a class=\"mobile_font_size\" href=\"index.php?id=$i\">{$arr[$i][0]}</a>";
+                    if (count($arr[$i]) > 1) {
                         echo "<ul class=\"down__menu\">";
-                            for ($a=1; $a < count($arr_page[$i]); ++$a) { 
-                                echo "<li><a href=\"index.php?head=$a\">{$arr_page[$i][$a]}</a></li>";
+                            for ($a=1; $a < count($arr[1]); ++$a) { 
+                                echo "<li><a href=\"index.php?topic_id=$a\">{$arr[1][$a][0]}</a></li>";
                             }
                         echo "</ul>";
                     }
