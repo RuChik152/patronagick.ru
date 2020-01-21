@@ -23,7 +23,7 @@ $arr_page = [
 <body>
   <!--header-->
   <header>
-    <div class="main__menu"><a href="index.html">          <img src="./images/logo.svg" alt="logo"/></a><img class="mobile_banner" src="./images/banner.png" alt="baner"/>
+    <div class="main__menu"><a href="index.php">          <img src="./images/logo.svg" alt="logo"/></a><img class="mobile_banner" src="./images/banner.png" alt="baner"/>
       <ul class="main__menu__item clearfix down_menu--horz">
         <?php         
           if (isset($arr)) 
