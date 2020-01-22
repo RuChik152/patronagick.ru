@@ -16,10 +16,9 @@ print_r($_GET);
                 if (!isset($_GET['topic_id'])) {
                     include "home.php";
                 }
-                if (isset($_GET['topic_id'])) {
-                    include "topic.php";
-                }
-
+                // if (isset($_GET['topic_id'])) {
+                //     include "topic.php";
+                // }
             ?>
             
         </section>

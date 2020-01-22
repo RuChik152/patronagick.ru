@@ -26,20 +26,54 @@ $arr_page = [
     <div class="main__menu"><a href="index.php">          <img src="./images/logo.svg" alt="logo"/></a><img class="mobile_banner" src="./images/banner.png" alt="baner"/>
       <ul class="main__menu__item clearfix down_menu--horz">
         <?php         
-          if (isset($arr)) 
-          {
-            for ($i=0; $i < count($arr); ++$i) {
-                echo "<li><a class=\"mobile_font_size\" href=\"index.php?id=$i\">{$arr[$i][0]}</a>";
-                    if (count($arr[$i]) > 1) {
-                        echo "<ul class=\"down__menu\">";
-                            for ($a=1; $a < count($arr[1]); ++$a) { 
-                                echo "<li><a href=\"index.php?topic_id=$a\">{$arr[1][$a][0]}</a></li>";
-                            }
-                        echo "</ul>";
-                    }
+          if (isset($arr_menu)){
+            for ($i=0; $i < count($arr_menu); ++$i) {
+                echo "<li><a class=\"mobile_font_size\" href=\"index.php?id=$i\">{$arr_menu[$i]}</a>";
+                $key = key($arr_menu);
+                next($arr_menu);
+                  if ($key == 1) {
+                    echo "<ul class=\"down__menu\">";
+                      for ($a=0; $a < count($arr_heading); ++$a) { 
+                        echo "<li><a href=\"topic.php?topic_id=$a\">{$arr_heading[$a][0]}</a></li>";
+                      }
+                    echo "</ul>";
+                }
                 echo "</li>";
             }
-          }  
+          } else {
+            echo "Ошибка, данные не найдены";
+          }
+
+          // if (isset($arr_heading)) {
+          //     echo "<ul class=\"down__menu\">";
+          //       for ($a=0; $a < count($arr_heading); ++$a) { 
+          //         echo "<li><a href=\"topic.php?topic_id=$a\">{$arr_heading[$a][0]}</a></li>";
+          //       }
+          //     echo "</ul>";
+          // }
+
+
+          //   if (isset($arr_heading)) {
+          //     echo "<ul class=\"down__menu\">";
+          //       for ($a=0; $i<count($arr_heading) ; ++$a) { 
+          //         echo "<li><a href=\"topic.php?topic_id=$a\">{$arr_heading[$a][0]}</a></li>";
+          //       }
+          //     echo "</ul>";
+          //   }
+          // echo "</li>";
+
+
+
+
+            // if (count($arr_menu[$i]) > 1) {
+            //     echo "<ul class=\"down__menu\">";
+            //         for ($a=1; $a < count($arr[1]); ++$a) { 
+            //             echo "<li><a href=\"index.php?topic_id=$a\">{$arr[1][$a][0]}</a></li>";
+            //         }
+            //     echo "</ul>";
+            // }
+            //     echo "</li>";
+            
         ?>
         <!-- <li><a class="mobile_font_size" href="help_mom.html">ПОМОЩЬ МАМЕ</a></li>
         <li><a class="mobile_font_size" href="#">РУБРИКИ</a>
