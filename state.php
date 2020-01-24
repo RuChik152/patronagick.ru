@@ -14,7 +14,17 @@ print_r($_GET);
     <div class="content">
         <section>
         <div class="section__topic_name">
-            <?php    ?>
+            <?php  
+            
+                if (isset($_GET['state_id']) && isset($_GET['topic_id'])) {
+                    $state_id = $_GET['state_id'];
+                    $topic_id = $_GET['topic_id'];
+                    if ($arr_article[$state_id]) {
+                        echo "<h4>".$arr_article[$state_id][0][]."</h4>";
+                    }
+                }
+
+            ?>
           <h4>Первое прикладывание</h4>
           <div class="section__topic_name_line">
             <hr/>
