@@ -30,7 +30,6 @@ print_r($_GET);
                     <?php
                         if (isset($_GET['article_id'])) {
                             for ($i=0; $i < count($arr_article[$article_id]); ++$i) { 
-                                $article_id = $article_id + $i;
                             echo   "<div class=\"section__themes_article_block\">
                                         <img src=\"{$arr_article[$article_id][$i][0]}\" alt=\"img\"/>
                                         <div class=\"section__themes_article_block-item\">
