@@ -28,7 +28,11 @@ $arr_page = [
         <?php         
           if (isset($arr_menu)){
             for ($i=0; $i < count($arr_menu); ++$i) {
-                echo "<li><a class=\"mobile_font_size\" href=\"index.php?id=$i\">{$arr_menu[$i]}</a>";
+                if ($i != 1) {
+                  echo "<li><a class=\"mobile_font_size\" href=\"index.php?id=$i\">{$arr_menu[$i]}</a>";
+                } else {
+                  echo "<li><a class=\"mobile_font_size\" href=\"index.php\">{$arr_menu[$i]}</a>";
+                }
                 $key = key($arr_menu);
                 next($arr_menu);
                   if ($key == 1) {
@@ -42,52 +46,8 @@ $arr_page = [
             }
           } else {
             echo "Ошибка, данные не найдены";
-          }
-
-          // if (isset($arr_heading)) {
-          //     echo "<ul class=\"down__menu\">";
-          //       for ($a=0; $a < count($arr_heading); ++$a) { 
-          //         echo "<li><a href=\"topic.php?topic_id=$a\">{$arr_heading[$a][0]}</a></li>";
-          //       }
-          //     echo "</ul>";
-          // }
-
-
-          //   if (isset($arr_heading)) {
-          //     echo "<ul class=\"down__menu\">";
-          //       for ($a=0; $i<count($arr_heading) ; ++$a) { 
-          //         echo "<li><a href=\"topic.php?topic_id=$a\">{$arr_heading[$a][0]}</a></li>";
-          //       }
-          //     echo "</ul>";
-          //   }
-          // echo "</li>";
-
-
-
-
-            // if (count($arr_menu[$i]) > 1) {
-            //     echo "<ul class=\"down__menu\">";
-            //         for ($a=1; $a < count($arr[1]); ++$a) { 
-            //             echo "<li><a href=\"index.php?topic_id=$a\">{$arr[1][$a][0]}</a></li>";
-            //         }
-            //     echo "</ul>";
-            // }
-            //     echo "</li>";
-            
+          }    
         ?>
-        <!-- <li><a class="mobile_font_size" href="help_mom.html">ПОМОЩЬ МАМЕ</a></li>
-        <li><a class="mobile_font_size" href="#">РУБРИКИ</a>
-          <ul class="down__menu">
-            <li><a href="topic.html">Первая пища малыша</a></li>
-            <li><a href="#">Уход за новорожденным</a></li>
-            <li><a href="#">Душевный покой мамы</a></li>
-            <li><a href="#">Ох, уж этот животик</a></li>
-            <li><a href="#">Почему малыш желтый</a></li>
-            <li><a href="#">Прививки</a></li>
-          </ul>
-        </li>
-        <li><a class="mobile_font_size" href="feedback.html">ЗАДАТЬ ВОПРОС</a></li>
-        <li><a class="mobile_font_size about" href="about.html">О проекте</a></li> -->
       </ul>
     </div>
   </header>
