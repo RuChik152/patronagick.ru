@@ -137,10 +137,10 @@ $arr_article = [
 
 <?php
 
-echo count($arr_article);
+// echo count($arr_article);
 
-echo "<pre>";
-print_r($arr_article);
-echo "</pre>";
+// echo "<pre>";
+// print_r($arr_article);
+// echo "</pre>";
 
 ?>
