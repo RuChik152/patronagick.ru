@@ -31,10 +31,10 @@ print_r($_GET);
                         if (isset($_GET['article_id'])) {
                             for ($i=0; $i < count($arr_article[$article_id]); ++$i) { 
                             echo   "<div class=\"section__themes_article_block\">
-                                        <img src=\"{$arr_article[$article_id][$i][0]}\" alt=\"img\"/>
+                                        <img src=\"./images/{$arr_article[$article_id][$i][0]}.png\" alt=\"img\"/>
                                         <div class=\"section__themes_article_block-item\">
                                             <a href=\"state.php?article_id=$article_id&state_id=$i&topic_id=$topic_id\">
-                                                <p>{$arr_article[$article_id][$i][3]}</p>
+                                                <p>{$arr_article[$article_id][$i][2]}</p>
                                             </a>
                                             <a class=\"button\" href=\"state.php?article_id=$article_id&state_id=$i&topic_id=$topic_id\">Далее<img src=\"./images/move.svg\" alt=\"move\"/>
                                             </a>

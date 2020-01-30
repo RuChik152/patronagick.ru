@@ -1,10 +1,10 @@
 <?php
 
 
-echo '<div class="section__banner"><a href="about.html">
-<div class="button"> 
-<p>О ПРОЕКТЕ</p>
-</div></a></div>';
+echo "<div class=\"section__banner\"><a href=\"about.php\">
+<div class=\"button\"> 
+<p>{$arr_menu[3]}</p>
+</div></a></div>";
 echo '<div class="site__content__blocks">';
 for ($i=0; $i < count($arr_heading); ++$i) { 
 echo   "<a href=\"topic.php?topic_id=$i\">
