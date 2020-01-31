@@ -13,8 +13,9 @@ print_r($_GET);
 
     }
 
+    echo "<pre>";
     print_r($arr_str);
-   
+    echo "</pre>";
 
     // echo "<pre>";
     // // echo $arr_article;

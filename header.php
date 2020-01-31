@@ -1,10 +1,11 @@
 <?php
 
-// include "db_config.php";
-// $query = $mysqli->query('SELECT `menu_name` FROM `menu` WHERE 1');   
-//     while ($row = mysqli_fetch_assoc($query)) {    
-//       $arr_menu[] = array_values($row);    
-//     }
+include "db_config.php";
+$query = $mysqli->query('SELECT `menu_name` FROM `menu` WHERE 1');
+    
+while ($row = mysqli_fetch_assoc($query)) {
+    $row_str = $row['menu_name'];
+    $arr_menu[] = $row['menu_name'];}
 
 ?>
 <!DOCTYPE html>
