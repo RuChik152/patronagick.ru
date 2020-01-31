@@ -1,13 +1,10 @@
 <?php
 
-$arr_page = [
-  ['Помощь маме'],
-  ['Рубрики', 'Первая пища малыша', 'Уход за новорожденным', 'Душевный покой мамы', 'ох, уж этот животик', 'почему малыш желтый', 'прививки'],
-  ['Задать вопрос'],
-  ['о проекте']
-];
-
-
+// include "db_config.php";
+// $query = $mysqli->query('SELECT `menu_name` FROM `menu` WHERE 1');   
+//     while ($row = mysqli_fetch_assoc($query)) {    
+//       $arr_menu[] = array_values($row);    
+//     }
 
 ?>
 <!DOCTYPE html>
@@ -51,4 +48,7 @@ $arr_page = [
       </ul>
     </div>
   </header>
+  <?php 
+  // mysql_close($query); 
+  ?>
   <!--end header-->

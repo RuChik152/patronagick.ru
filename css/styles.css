@@ -9016,17 +9016,20 @@ body {
     margin-right: auto; }
 
 .section__help__mom__block-item p {
+  margin-top: 4%;
   text-transform: none; }
 
 .section__help__mom__block-item a {
   text-decoration: underline; }
   .section__help__mom__block-item a h3 {
     font-weight: 600;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 19px;
     letter-spacing: 0.098em;
     margin-bottom: 0px; }
-
+.section__help__mom__block-item_contacts {
+  margin-top: 5%;
+}
 .section__help__mom__block-item_contacts img {
   margin-right: 7px; }
 
