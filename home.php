@@ -1,5 +1,10 @@
 <?php
 
+// $query = $mysqli->query('SELECT `sub_menu_name`, `sub_menu_img` FROM `submenu` WHERE 1');
+// while ($row = mysqli_fetch_assoc($query)) {    
+//     $arr_heading[] = array_values($row);    
+// }
+
 
 echo "<div class=\"section__banner\"><a href=\"about.php\">
 <div class=\"button\"> 
@@ -17,7 +22,5 @@ echo   "<a href=\"topic.php?topic_id=$i\">
         </a>";
 }
 echo '</div>';
-
-
 
 ?>

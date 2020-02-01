@@ -1,12 +1,17 @@
 <?php
 
-// include "db_config.php";
-// $query = $mysqli->query('SELECT `menu_name` FROM `menu` WHERE 1');
-    
-// while ($row = mysqli_fetch_assoc($query)) {
-//     $row_str = $row['menu_name'];
-//     $arr_menu[] = $row['menu_name'];}
-include "array.php";
+include "db_config.php";
+
+$query = $mysqli->query('SELECT `menu_name` FROM `menu` WHERE 1');   
+while ($row = mysqli_fetch_assoc($query)) {
+    $row_str = $row['menu_name'];
+    $arr_menu[] = $row['menu_name'];}
+
+$query = $mysqli->query('SELECT `sub_menu_name`, `sub_menu_img` FROM `submenu` WHERE 1');
+while ($row = mysqli_fetch_assoc($query)) {    
+    $arr_heading[] = array_values($row);    
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="ru"></html>
@@ -29,7 +34,7 @@ include "array.php";
                 if ($i != 1) {
                   echo "<li><a class=\"mobile_font_size\" href=\"index.php?id=$i\">{$arr_menu[$i]}</a>";
                 } else {
-                  echo "<li><a class=\"mobile_font_size\" href=\"index.php\">{$arr_menu[$i]}</a>";
+                  echo "<li><a class=\"mobile_font_size\">{$arr_menu[$i]}</a>";
                 }
                 $key = key($arr_menu);
                 next($arr_menu);

@@ -3,10 +3,32 @@
 print_r($_GET);
 
 ?>
-<?php include "array.php"; ?>
+
 <!-- start header.php -->
 <?php include "header.php"; ?>
 <!-- end header.php -->
+
+<?php 
+$query = $mysqli->query('SELECT `sub_menu_name`, `sub_menu_img` FROM `submenu` WHERE 1');
+while ($row = mysqli_fetch_assoc($query)) {    
+    $arr_heading[] = array_values($row);    
+}
+
+// $query = $mysqli->query('SELECT `submenu_thems_img`, `submenu_thems_name` FROM `submenu_thems` WHERE id=1');
+// while ($row = mysqli_fetch_assoc($query)) {    
+//     $arr_topic_theme[] = array_values($row);    
+// }
+
+if (isset($_GET['topic_id'])) {
+    $query_id = $_GET['topic_id'];
+    $query_id = $query_id + 1;
+    $query = $mysqli->query("SELECT `submenu_thems_img`, `submenu_thems_name` FROM `submenu_thems` WHERE id=$query_id");
+    while ($row = mysqli_fetch_assoc($query)) {    
+        $arr_topic_theme[] = array_values($row);    
+    }
+}    
+
+?>
 
 <!-- start content -->
 <div class="wrap">
@@ -27,16 +49,15 @@ print_r($_GET);
                         <hr/>
                     </div>
                 </div>
-                <div class="section__topic_themes">
-                    <?php
-                    
-                        if (isset($arr_topic_theme[$topic_id])) {
-                            for ($i=0; $i < count($arr_topic_theme[$topic_id]); ++$i) { 
+                <div class="section__topic_themes">    
+                <?php
+                        if (isset($arr_topic_theme)) {
+                            for ($i=0; $i < count($arr_topic_theme); ++$i) { 
                                 echo    "<a href=\"article.php?article_id=$i&topic_id=$topic_id\">
                                             <div class=\"section__topic_themes-item\">
                                                 <div class=\"section__topic_themes-item-center\">
-                                                    {$arr_topic_theme[$topic_id][$i][0]}
-                                                    <h6>{$arr_topic_theme[$topic_id][$i][1]}</h6>
+                                                    {$arr_topic_theme[$i][0]}
+                                                    <h6>{$arr_topic_theme[$i][1]}</h6>
                                                 </div>
                                             </div>
                                         </a>";
