@@ -3,7 +3,7 @@
 include "db_config.php";
 print_r($_GET);
 
-    $query = $mysqli->query('SELECT `submenu_thems_img`, `submenu_thems_name` FROM `submenu_thems` WHERE id=1');
+    $query = $mysqli->query('SELECT `submenu_thems_name` FROM `submenu_thems` WHERE id=1');
 
     // while ($row = mysqli_fetch_assoc($query)) {
     //     $arr_str[] = $row['menu_name'];
