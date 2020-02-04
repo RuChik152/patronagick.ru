@@ -8517,15 +8517,18 @@ header {
   display: flex;
   margin-bottom: 0px; }
   .main__menu__item a {
+    color: #793333;
     display: block;
     padding: 14px 15px;
     font-size: 18px;
     line-height: 21px;
     letter-spacing: 0.095em;
     position: relative; }
+  .main__menu__item a:hover {
+    color: #793333;
+  }
   .main__menu__item li:hover {
     background-color: #c5aaaa; }
-
 .down__menu {
   position: absolute;
   margin: 0;

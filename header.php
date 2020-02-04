@@ -31,10 +31,13 @@ while ($row = mysqli_fetch_assoc($query)) {
         <?php         
           if (isset($arr_menu)){
             for ($i=0; $i < count($arr_menu); ++$i) {
-                if ($i != 1) {
-                  echo "<li><a class=\"mobile_font_size\" href=\"index.php?id=$i\">{$arr_menu[$i]}</a>";
-                } else {
+                if ($i == 1) {
                   echo "<li><a class=\"mobile_font_size\">{$arr_menu[$i]}</a>";
+                }elseif ($i == 3) {
+                  echo "<li><a class=\"mobile_font_size about\" href=\"index.php?id=$i\">{$arr_menu[$i]}</a>";
+                } 
+                else {
+                  echo "<li><a class=\"mobile_font_size\" href=\"index.php?id=$i\">{$arr_menu[$i]}</a>";
                 }
                 $key = key($arr_menu);
                 next($arr_menu);

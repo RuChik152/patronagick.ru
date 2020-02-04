@@ -2,7 +2,6 @@
 <?php include "header.php"; ?>
 <!-- end header.php -->
 <?php
-print_r($_GET);
 include "db_config.php";
 $query = $mysqli->query('SELECT `link`, `title`, `address`, `phone`, `email` FROM `organization` WHERE 1');   
     while ($row = mysqli_fetch_assoc($query)) {    
