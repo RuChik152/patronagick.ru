@@ -9,7 +9,7 @@ if (isset($_GET['article_id']) && isset($_GET['topic_id']) && isset($_GET['id_th
         $arr_topic_theme[] = array_values($row);    
     }
 
-    $query = $mysqli->query("SELECT `img_min`, `name` FROM `articles` WHERE id_themes=$query_id");
+    $query = $mysqli->query("SELECT `img_min`, `name`, `id_note` FROM `articles` WHERE id_themes=$query_id");
     while ($row = mysqli_fetch_assoc($query)) {    
         $arr_article[] = array_values($row);    
     }
@@ -41,10 +41,10 @@ if (isset($_GET['article_id']) && isset($_GET['topic_id']) && isset($_GET['id_th
                             echo   "<div class=\"section__themes_article_block\">
                                         <img src=\"./images/{$arr_article[$i][0]}.png\" alt=\"img\"/>
                                         <div class=\"section__themes_article_block-item\">
-                                            <a href=\"state.php?article_id=$article_id&state_id=$i&topic_id=$topic_id\">
+                                            <a href=\"state.php?article_id=$article_id&state_id=$i&topic_id=$topic_id&id_note={$arr_article[$i][2]}\">
                                                 <p>{$arr_article[$i][1]}</p>
                                             </a>
-                                            <a class=\"button\" href=\"state.php?article_id=$article_id&state_id=$i&topic_id=$topic_id\">Далее<img src=\"./images/move.svg\" alt=\"move\"/>
+                                            <a class=\"button\" href=\"state.php?article_id=$article_id&state_id=$i&topic_id=$topic_id&id_note={$arr_article[$i][2]}\">Далее<img src=\"./images/move.svg\" alt=\"move\"/>
                                             </a>
                                         </div>
                                     </div>";

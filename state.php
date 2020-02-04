@@ -1,13 +1,15 @@
-<?php
-
-print_r($_GET);
-
-?>
-<?php include "array.php"; ?>
 <!-- start header.php -->
 <?php include "header.php"; ?>
 <!-- end header.php -->
-
+<?php
+if (isset($_GET['id_note'])) {
+  $query_id = $_GET['id_note'];
+  $query = $mysqli->query("SELECT `name`, `img`, `text`, `link` FROM `articles` WHERE id_note=$query_id");
+  while ($row = mysqli_fetch_assoc($query)) {    
+    $arr_article[] = array_values($row);    
+}
+}
+?>
 
 <!-- start content -->
 <div class="wrap">
@@ -16,11 +18,8 @@ print_r($_GET);
         <div class="section__topic_name">
             <?php             
                 if (isset($_GET['state_id']) && isset($_GET['topic_id']) && isset($_GET['article_id'])) {
-                    $state_id = $_GET['state_id'];
-                    $topic_id = $_GET['topic_id'];
-                    $article_id = $_GET['article_id'];
-                    if (isset($arr_article[$article_id])) {
-                        echo "<h4>".$arr_article[$article_id][$state_id][2]."</h4>";
+                    if (isset($arr_article)) {
+                        echo "<h4>".$arr_article[0][0]."</h4>";
                     }
                 }
             ?>
@@ -29,15 +28,15 @@ print_r($_GET);
             <hr/>
           </div>
         </div>
-        <?php if (isset($_GET['state_id']) && isset($_GET['topic_id']) && isset($_GET['article_id'])) :?>
+        <?php if (isset($arr_article)) :?>
         <div class="section_article"><img class="line" src="./images/line_article.svg" alt="img"/>
-          <div class="section_article_content"><img src="./images/<?php echo $arr_article[$article_id][$state_id][1]; ?>.png" alt="img"/>
+          <div class="section_article_content"><img src="./images/<?php echo $arr_article[0][1]; ?>.png" alt="img"/>
             <div class="section_article_content-item">
-                <?php if (isset($arr_article[$article_id][$state_id][3])) :?>
-              <p><?php echo $arr_article[$article_id][$state_id][3];?></p>
+                <?php if ($arr_article[0][2] == true) :?>
+              <p><?php echo $arr_article[0][2];?></p>
                 <?php endif;?>
-              <?php if (isset($arr_article[$article_id][$state_id][4])) :?>
-              <iframe src="https://<?php echo $arr_article[$article_id][$state_id][4];?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen"></iframe>
+              <?php if ($arr_article[0][3] == true) :?>
+              <iframe src="https://<?php echo $arr_article[0][3];?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen"></iframe>
               <?php endif;?>
               <?php endif;?>
             </div>
@@ -52,8 +51,6 @@ print_r($_GET);
     </div>
   </div>
 <!-- end content -->
-
-
 <!-- start footer.php -->
 <?php include "footer.php"; ?>
 <!-- end footer.php -->

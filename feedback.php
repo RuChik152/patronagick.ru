@@ -1,9 +1,3 @@
-<?php
-
-print_r($_GET);
-
-?>
-<?php include "array.php"; ?>
 <!-- start header.php -->
 <?php include "header.php"; ?>
 <!-- end header.php -->
