@@ -62,7 +62,7 @@ include "db_config.php";
     echo "<hr>";
     echo "<hr>";
     echo $c;
-    $d = str_ireplace(integer")", "<h5>", $c);
+    
    
 
 ?>
