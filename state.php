@@ -8,6 +8,26 @@ if (isset($_GET['id_note'])) {
   while ($row = mysqli_fetch_assoc($query)) {    
     $arr_article[] = array_values($row);    
 }
+
+$str = $arr_article[0][2];
+
+$patterns = array();
+$patterns[0] = '/[0-9][.]/ui';
+$patterns[1] = '/[:]/ui';
+$patterns[2] = '/[•]/ui';
+$patterns[3] = '/[;]/ui';
+$patterns[4] = '/[.]{2}/ui';
+
+$replacements = array();
+$replacements[0] = '<h5>';
+$replacements[1] = ':</h5><ul>';
+$replacements[2] = '<li><span>';
+$replacements[3] = ';</span></li>';
+$replacements[4] = '.</span></li></ul>';
+
+$str_mod = preg_replace($patterns, $replacements, $str);
+
+
 }
 ?>
 
@@ -33,7 +53,7 @@ if (isset($_GET['id_note'])) {
           <div class="section_article_content"><img src="./images/<?php echo $arr_article[0][1]; ?>.png" alt="img"/>
             <div class="section_article_content-item">
                 <?php if ($arr_article[0][2] == true) :?>
-              <p><?php echo $arr_article[0][2];?></p>
+              <?php echo $str_mod;?>
                 <?php endif;?>
               <?php if ($arr_article[0][3] == true) :?>
               <iframe src="https://<?php echo $arr_article[0][3];?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen"></iframe>
