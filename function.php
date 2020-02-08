@@ -1,9 +1,11 @@
 <?php
-include "array.php";
+
+function checkValue($item, $massege){
+    if (isset($item) && trim($item) == ''){
+        echo "<div class=\"error\"><p>".$massege."</p></div>";
+    }
+}
 
 
-echo "<pre>";
-print_r($arr[1][1][0]);
-echo "</pre>";
 
 ?>

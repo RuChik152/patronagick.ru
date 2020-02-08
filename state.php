@@ -17,6 +17,8 @@ $patterns[1] = '/[:]/ui';
 $patterns[2] = '/[•]/ui';
 $patterns[3] = '/[;]/ui';
 $patterns[4] = '/[.]{2}/ui';
+$patterns[5] = '/[*]{2}/ui';
+$patterns[6] = '/[*]/ui';
 
 $replacements = array();
 $replacements[0] = '<h5>';
@@ -24,6 +26,8 @@ $replacements[1] = ':</h5><ul>';
 $replacements[2] = '<li><span>';
 $replacements[3] = ';</span></li>';
 $replacements[4] = '.</span></li></ul>';
+$replacements[5] = '<p>';
+$replacements[6] = '</p>';
 
 $str_mod = preg_replace($patterns, $replacements, $str);
 
