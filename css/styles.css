@@ -8566,7 +8566,7 @@ header {
 
 /* index.html */
 body {
-  background: url(../images/fon.svg) no-repeat;
+  /* background: url(../images/fon.svg) no-repeat; */
   background-color: #BA9D9D; }
 
 .section__banner {
@@ -9065,7 +9065,9 @@ body {
     width: 203px;
     margin-left: auto;
     margin-right: auto; }
-
+.section__help__mom__block-item {
+  min-height: 11em;
+}
 .section__help__mom__block-item p {
   margin-top: 4%;
   text-transform: none; }
@@ -9442,6 +9444,9 @@ footer {
   }
   .section_thankyou{
     height: 21em;
+  }
+  .section__help__mom__block-item {
+    min-height: 0;
   }
   footer {
     background: none;
