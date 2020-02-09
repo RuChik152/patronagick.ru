@@ -26,17 +26,21 @@ if (!empty($_POST) && trim($_POST['name'])!='' && trim($_POST['email'])!='' && t
         </div>
         <div class="section_form"><img src="./images/feddback.svg" alt="feedback"/>
             <div class="section_form-items">
-            <form action="feedback.php" method="POST">
-                <?php checkValue($_POST['name'], 'Вы не заполнили поле Имя');?> 
-                <input type="text" name="name" placeholder="Ваше имя" value="<?php saveValue($_POST['name']);?>"/>
-                <?php checkValue($_POST['email'], 'Вы не заполнили поле e-mail');?>
-                <input type="email" name="email" placeholder="e-mail" value="<?php saveValue($_POST['email']);?>"/>
-                <?php checkValue($_POST['massege'], 'Нельзя отправить пустое сообщение');?>
-                <textarea name="massege" placeholder="Ваш вопрос"><?php saveValue($_POST['massege']);?></textarea>
-                <input class="button" type="submit" value="ОТПРАВИТЬ"/>
-            </form>
+                <form action="feedback.php" method="POST">
+                    <?php checkValue($_POST['name'], 'Вы не заполнили поле Имя');?> 
+                    <input type="text" name="name" placeholder="Ваше имя" value="<?php saveValue($_POST['name']);?>"/>
+                    <?php checkValue($_POST['email'], 'Вы не заполнили поле e-mail');?>
+                    <input type="email" name="email" placeholder="e-mail" value="<?php saveValue($_POST['email']);?>"/>
+                    <?php checkValue($_POST['massege'], 'Нельзя отправить пустое сообщение');?>
+                    <textarea name="massege" placeholder="Ваш вопрос"><?php saveValue($_POST['massege']);?></textarea>
+                    <input class="button" type="submit" value="ОТПРАВИТЬ"/>
+                    <P>Если форма не работает можно воспользоваться альтернативыным способом отправки</P>
+                    <a href="mailto:chernovn152@gamil.com">Написать</a>
+                </form>
             </div>
+
         </div>
+
     </section>
     
 </div>
