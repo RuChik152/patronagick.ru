@@ -6,6 +6,10 @@ function checkValue($item, $massege){
     }
 }
 
+function saveValue($item){
+    if (isset($item) && strlen(trim($item)) > 0) {
+        echo $item;}
+}
 
 
 ?>

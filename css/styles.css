@@ -9117,6 +9117,32 @@ body {
   margin-left: auto;
   margin-right: auto;
   text-align: justify; }
+/*Thankyou*/
+.section_thankyou {
+  height: 41em;
+  background-color: #DDCACA;
+  padding-top: 5%;
+}
+  .section_thankyou img{
+    display: block;
+    margin: 0 auto;
+    width: 22%;
+  }
+.section_thankyou_block {
+  text-align: center;
+  margin-bottom: 4%;
+  margin-top: 5%;
+}
+  .section_thankyou_block a {
+    display: block;
+    border-radius: 7px;
+    color: antiquewhite;
+    background-color: #793333;
+    width: fit-content;
+    font-size: 21px;
+    padding: 2%;
+    margin: 0 auto;
+  }
 
 footer {
   background: url(../images/footer_2.svg) no-repeat center bottom;
@@ -9389,6 +9415,14 @@ footer {
       text-align: center; }
   .section_about__block__text p {
     text-transform: none; }
+  .error {
+    height: fit-content;
+    padding: 2%;
+    font-size: 135%;
+  }
+  .section_thankyou{
+    height: 21em;
+  }
   footer {
     background: none;
     height: -webkit-fit-content;
