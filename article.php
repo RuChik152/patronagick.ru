@@ -38,9 +38,13 @@ if (isset($_GET['article_id']) && isset($_GET['topic_id']) && isset($_GET['id_th
                     <?php
                         if (isset($_GET['article_id'])) {
                             for ($i=0; $i < count($arr_article); ++$i) { 
-                            echo   "<div class=\"section__themes_article_block\">
-                                        <img src=\"./images/{$arr_article[$i][0]}.png\" alt=\"img\"/>
-                                        <div class=\"section__themes_article_block-item\">
+                            echo   "<div class=\"section__themes_article_block\">";
+                                        if($arr_article[$i][0] == true){
+                                        echo "<img src=\"./images/article/{$arr_article[$i][0]}.png\" alt=\"img\"/>";
+                                        } else {
+                                            echo "<img src=\"./images/state_img_min.png\" alt=\"img\"/>";
+                                        }
+                                        echo "<div class=\"section__themes_article_block-item\">
                                             <a href=\"state.php?article_id=$article_id&state_id=$i&topic_id=$topic_id&id_note={$arr_article[$i][2]}\">
                                                 <p>{$arr_article[$i][1]}</p>
                                             </a>

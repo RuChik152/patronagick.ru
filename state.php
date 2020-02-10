@@ -54,7 +54,10 @@ $str_mod = preg_replace($patterns, $replacements, $str);
         </div>
         <?php if (isset($arr_article)) :?>
         <div class="section_article"><img class="line" src="./images/line_article.svg" alt="img"/>
-          <div class="section_article_content"><img src="./images/<?php echo $arr_article[0][1]; ?>.png" alt="img"/>
+          <div class="section_article_content">
+          <?php if ($arr_article[0][1] == true) :?>
+          <img src="./images/article/<?php echo $arr_article[0][1]; ?>.png" alt="img"/>
+          <?php endif; ?>
             <div class="section_article_content-item">
                 <?php if ($arr_article[0][2] == true) :?>
               <?php echo $str_mod;?>
