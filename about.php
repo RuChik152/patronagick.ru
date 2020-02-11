@@ -22,7 +22,7 @@ while ($row = mysqli_fetch_assoc($query)) {
           <div class="section_about__block">
             <div class="section_about__block__portfolio_author">
                 <div class="section_about__block__portfolio">
-                    <img class="one" src="./images/<?php echo $arr_about[0][3]; ?>.svg" alt="potfolio"/>
+                    <img class="one" src="./images/<?php echo $arr_about[0][3]; ?>.png" alt="potfolio"/>
                     <img class="two" src="./images/portfolio_fon.svg" alt="portfolio_fon"/>
                 </div>
                 <div class="section_about__block__author">

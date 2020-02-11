@@ -8480,7 +8480,7 @@ h1, h2, h3, h4, h5, h6, a, p {
 }
 
 .section_article_content-item span {
-  color: #734848;
+  color: #231a1a;
 }
 
 li {
@@ -9103,11 +9103,15 @@ body {
   padding-top: 55px;
   padding-bottom: 70px;
   padding-left: 55px;
-  padding-right: 55px; }
+  padding-right: 55px;}
   .section_about__block hr {
     width: 70%;
     margin-left: auto;
     margin-right: auto; }
+  .section_about__block p {
+    text-transform: inherit;
+    color: #3e1d1d;
+  }
 
 .section_about__block__portfolio_author {
   display: -webkit-box;
