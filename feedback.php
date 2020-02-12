@@ -1,8 +1,3 @@
-<!-- start header.php -->
-<?php include "header.php"; ?>
-<!-- end header.php -->
-<?php include "function.php"; ?>
-<!--content-->
 <?php if (!empty($_POST) && trim($_POST['name'])!='' && trim($_POST['email'])!='' && trim($_POST['massege'])!='') {
     $massege = "Вам пришло письмо с сайта: \n".
            "Имя отправителя: ".$_POST['name']."\n".
@@ -11,6 +6,12 @@
     mail ( 'info@mail.ru' , 'Сообщение с сайта' , $massege );
     header('Location: thankyou.php');}
 ?>
+<!-- start header.php -->
+<?php include "header.php"; ?>
+<!-- end header.php -->
+<?php include "function.php"; ?>
+<!--content-->
+
 <div class="wrap">
 <div class="content">
     <section>
