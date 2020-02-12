@@ -9480,3 +9480,26 @@ footer {
     height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content; } }
+@media screen and (max-width: 768px) {
+  header {
+    width: 100%;
+  }
+  .main__menu{
+    width: 100%;
+  }
+  .content {
+    width: 100%;
+  }
+  .section__banner{
+    width: 100%;
+  }
+  .section__themes_article_block{
+    width: 100%;
+  }
+  .section__themes_article_block-item{
+    width: 100%;
+  }
+  .section__themes_article_block-item a {
+    margin-left: auto;
+  }
+}
