@@ -3,20 +3,13 @@
 <!-- end header.php -->
 <?php include "function.php"; ?>
 <!--content-->
-<?php
-
-
-if (!empty($_POST) && trim($_POST['name'])!='' && trim($_POST['email'])!='' && trim($_POST['massege'])!='') {
+<?php if (!empty($_POST) && trim($_POST['name'])!='' && trim($_POST['email'])!='' && trim($_POST['massege'])!='') {
     $massege = "Вам пришло письмо с сайта: \n".
            "Имя отправителя: ".$_POST['name']."\n".
            "E-mail отправителя ".$_POST['email']."\n".
            "Сообщение: ".$_POST['massege']."\n";
     mail ( 'info@mail.ru' , 'Сообщение с сайта' , $massege );
-    header('location: thankyou.php');
-}
-
-
-
+    header('Location: thankyou.php');}
 ?>
 <div class="wrap">
 <div class="content">
@@ -35,7 +28,7 @@ if (!empty($_POST) && trim($_POST['name'])!='' && trim($_POST['email'])!='' && t
                     <textarea name="massege" placeholder="Ваш вопрос"><?php saveValue($_POST['massege']);?></textarea>
                     <input class="button" type="submit" value="ОТПРАВИТЬ"/>
                     <P>Если форма не работает можно воспользоваться альтернативыным способом отправки</P>
-                    <a href="mailto:chernovn152@gamil.com">Написать</a>
+                    <a href="mailto:chernovn152@gamil.com" >Написать</a>
                 </form>
             </div>
 
