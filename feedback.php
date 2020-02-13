@@ -3,7 +3,7 @@
            "Имя отправителя: ".$_POST['name']."\n".
            "E-mail отправителя ".$_POST['email']."\n".
            "Сообщение: ".$_POST['massege']."\n";
-    mail ( 'info@mail.ru' , 'Сообщение с сайта' , $massege );
+    mail ( 'info@mail.ru' , 'Сообщение с сайта' , $massege, 'Content-type:text/plain; charset=UTF-8' );
     header('Location: thankyou.php');}
 ?>
 <!-- start header.php -->
