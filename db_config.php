@@ -20,12 +20,6 @@
     
     $mysqli->set_charset('utf8');
     
-    // $query = $mysqli->query('SELECT `name`, `description`, `text`, `img` FROM `article` WHERE 1');
-    
-    // while ($row = mysqli_fetch_assoc($query)) {
-    
-    //     $arr_article[] = array_values($row);
-    
-    // }
+
 
 ?>
