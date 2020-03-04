@@ -1,13 +1,6 @@
 <?php
 
 include "db_config.php";
-<<<<<<< HEAD
-$query = $mysqli->query('SELECT `menu_name` FROM `menu` WHERE 1');
-    
-// while ($row = mysqli_fetch_assoc($query)) {
-//     $arr_menu[] = $row['menu_name'];}
-// include "array.php";
-=======
 
 $query = $mysqli->query('SELECT `menu_name` FROM `menu` WHERE 1');   
 while ($row = mysqli_fetch_assoc($query)) {
@@ -19,7 +12,6 @@ while ($row = mysqli_fetch_assoc($query)) {
     $arr_heading[] = array_values($row);    
 }
 
->>>>>>> 3375387848c3a93ed4bfe190d7a5435095b18de8
 ?>
 <!DOCTYPE html>
 <html lang="ru"></html>
